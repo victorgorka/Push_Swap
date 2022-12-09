@@ -6,13 +6,12 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2022/11/23 18:54:19 by vde-prad         ###   ########.fr        #
+#    Updated: 2022/12/09 17:21:56 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-SRCS	= 	push_swap.c \
-		  	push_swap.h
+SRCS	= 	push_swap.c
 OBJS	= ${SRCS:.c=.o}
-NAME	= pipex
+NAME	= push_swap
 LIBRARY = libft/libft.a
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
@@ -34,7 +33,7 @@ $(NAME): ${OBJS}
 	@echo "\nFINISHED"
 
 clean:
-	@echo "LIMPIANDO"
+	@echo "CLEANED"
 	@${MAKE} -C ./libft clean
 	@${RM} ${OBJS}
 
