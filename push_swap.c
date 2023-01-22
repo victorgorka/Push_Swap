@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/21 22:58:30 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:47:57 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -79,11 +79,11 @@ int	main(int argc, char	**argv)
 
 	b = NULL;
 	a = NULL;
-	if (argc > 1)
-		ft_fillstack(&a, argc, argv);
+	if (argc > 1 && !ft_check_args(argc, argv))
+		ft_error();
 	else
 		return (0);
-
+	ft_fillstack(&a, argc, argv);
 	t_stack *n = a;
 	while (n)
 	{
@@ -95,7 +95,7 @@ int	main(int argc, char	**argv)
 	n = a;
 	while (n)
 	{
-		ft_printf("value: %d\n", n->value);
+		printf("value: %d\n", n->value);
 		n = n->next;
 	}
 	n = a;

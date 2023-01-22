@@ -6,7 +6,7 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2022/12/09 17:21:56 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/01/22 11:54:55 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 SRCS	= 	push_swap.c
@@ -23,7 +23,7 @@ all: lib comp
 	
 lib:
 	@echo "\nCOMPILING LIBFT"
-	@${MAKE} -C ./libft
+	@${MAKE} extra -C ./libft
 
 comp: ${NAME}
 

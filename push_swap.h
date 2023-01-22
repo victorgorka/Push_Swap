@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2022/12/08 20:47:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/22 12:46:08 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 //*************************** FUNCTIONS **************************************
+unsigned int	ft_check_args(int argc, char **argv);
+void			ft_error();
 #endif

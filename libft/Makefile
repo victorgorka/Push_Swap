@@ -6,7 +6,7 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 17:40:54 by vde-prad          #+#    #+#              #
-#    Updated: 2023/01/21 23:16:12 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/01/22 11:27:32 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,8 +68,12 @@ all: ${NAME}
 
 ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
+
 bonus: ${NAME} ${OBJS_BONUS}
 	@ar rcs ${NAME} ${OBJS_BONUS}
+
+extra: all
+	@${MAKE} -C ./printf
 
 clean:
 	@${RM} ${OBJS} ${OBJS_BONUS}
