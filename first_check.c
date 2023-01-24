@@ -16,7 +16,12 @@ unsigned int ft_check_args(int argc, char **argv)
 
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
-
+	else
+	{
+		args = malloc(argc * sizeof(char **));
+		while (argc > 0)
+			argc = *argv;
+	}
 }
 
 void ft_error()
