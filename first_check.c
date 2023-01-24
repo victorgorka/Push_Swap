@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/22 16:51:08 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/24 19:41:29 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ unsigned int ft_check_args(int argc, char **argv)
 	else
 	{
 		args = malloc(argc * sizeof(char **));
-		while (argc > 0)
-			argc = *argv;
+		while (argc-- > 1)
+			*args++ = ++*argv;
 	}
 }
 
