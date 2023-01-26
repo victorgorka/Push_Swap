@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/22 12:47:57 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:52:41 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -67,42 +67,42 @@ void	ft_push(t_stack **x, t_stack **y)
 	*x = aux;
 }
 
-void	check(void)
-{
-	system("leaks push_swap");
-}
-
-int	main(int argc, char	**argv)
-{
-	t_stack	*a;	
-	t_stack	*b;
-
-	b = NULL;
-	a = NULL;
-	if (argc > 1 && !ft_check_args(argc, argv))
-		ft_error();
-	else
-		return (0);
-	ft_fillstack(&a, argc, argv);
-	t_stack *n = a;
-	while (n)
-	{
-		printf("value: %d\n", n->value);
-		n = n->next;
-	}
-	puts("\n");
-	ft_push(&a, &b);
-	n = a;
-	while (n)
-	{
-		printf("value: %d\n", n->value);
-		n = n->next;
-	}
-	n = a;
-	ft_cleanstack(&a);
-	ft_cleanstack(&b);
-	atexit(check);
-}
+// void	check(void)
+// {
+//     system("leaks push_swap");
+// }
+// 
+// int	main(int argc, char	**argv)
+// {
+//     t_stack	*a;	
+//     t_stack	*b;
+// 
+//     b = NULL;
+//     a = NULL;
+//     if (argc > 1 && !ft_check_args(argc, argv))
+//         ft_error();
+//     else
+//         return (0);
+//     ft_fillstack(&a, argc, argv);
+//     t_stack *n = a;
+//     while (n)
+//     {
+//         printf("value: %d\n", n->value);
+//         n = n->next;
+//     }
+//     puts("\n");
+//     ft_push(&a, &b);
+//     n = a;
+//     while (n)
+//     {
+//         printf("value: %d\n", n->value);
+//         n = n->next;
+//     }
+//     n = a;
+//     ft_cleanstack(&a);
+//     ft_cleanstack(&b);
+//     atexit(check);
+// }
 //if 1st number is highest -->ra
 //if 2nd numbeer is highest -->rra
 //if  1st  number > 2nd number --> sa

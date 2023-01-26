@@ -6,7 +6,7 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 17:40:54 by vde-prad          #+#    #+#              #
-#    Updated: 2023/01/22 11:27:32 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/01/25 15:30:02 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,19 @@ SRCS_BONUS	= ft_lstmap_bonus.c \
 			  ft_lstadd_front_bonus.c \
 			  ft_lstnew_bonus.c
 
-OBJS		= ${SRCS:.c=.o}
-OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
+PRNT_FILES	= ft_printf.c \
+			  ft_putchar.c \
+			  ft_puthex.c \
+			  ft_putnbr.c \
+			  ft_putstr.c \
+			  ft_strlen.c
+
+VPATH		= ./:./printf
+
+OBJS_PRNT	= ${PRNT_FILES:.c=.o}
+OBJS_LIB	= $(SRCS:.c=.o)
+OBJS		= $(OBJS_LIB) $(OBJS_PRNT)
+OBJS_BONUS	= $(SRCS_BONUS:.c=.o)
 NAME		= libft.a
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
@@ -64,16 +75,14 @@ RM			= rm -f
 
 all: ${NAME}
 
-%.o:.c
+# %.o: %.c
+#     @$(CC) $(CFLAGS) -c $< 
 
 ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
 
 bonus: ${NAME} ${OBJS_BONUS}
 	@ar rcs ${NAME} ${OBJS_BONUS}
-
-extra: all
-	@${MAKE} -C ./printf
 
 clean:
 	@${RM} ${OBJS} ${OBJS_BONUS}

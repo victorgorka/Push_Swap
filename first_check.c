@@ -6,9 +6,10 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/24 19:41:29 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:23:09 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "push_swap.h"
 
 unsigned int ft_check_args(int argc, char **argv)
 {
@@ -17,14 +18,17 @@ unsigned int ft_check_args(int argc, char **argv)
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
-	{
-		args = malloc(argc * sizeof(char **));
-		while (argc-- > 1)
-			*args++ = ++*argv;
-	}
+		args = &argv[1];
+	return (0);
 }
 
 void ft_error()
 {
+	ft_putstr_fd("Error\n", 2);
+	exit(-1);
+}
 
+int main(int argc, char	**argv)
+{
+	ft_check_args(argc, argv);
 }

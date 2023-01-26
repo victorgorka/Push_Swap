@@ -6,10 +6,12 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2023/01/22 11:54:55 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/01/25 13:29:33 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-SRCS	= 	push_swap.c
+SRCS	= 	push_swap.c \
+			first_check.c
+
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
 LIBRARY = libft/libft.a
@@ -23,7 +25,7 @@ all: lib comp
 	
 lib:
 	@echo "\nCOMPILING LIBFT"
-	@${MAKE} extra -C ./libft
+	@${MAKE} -C ./libft
 
 comp: ${NAME}
 

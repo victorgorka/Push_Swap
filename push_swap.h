@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/22 12:46:08 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:52:55 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //*********************** STANDARD LIBRARIES *********************************
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft/libft.h"
 //************************** DEFINITIONS *************************************
 typedef struct s_stack
 {
