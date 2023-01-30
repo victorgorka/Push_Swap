@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/25 12:52:41 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:17:31 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -74,16 +74,17 @@ void	ft_push(t_stack **x, t_stack **y)
 // 
 // int	main(int argc, char	**argv)
 // {
-//     t_stack	*a;	
+//     t_stack	*a;
 //     t_stack	*b;
+//     t_data	data;
 // 
+//     data.argc = argc;
 //     b = NULL;
-//     a = NULL;
-//     if (argc > 1 && !ft_check_args(argc, argv))
+//     if (argc > 1 && !ft_check_args(argc, argv, &data))
 //         ft_error();
 //     else
 //         return (0);
-//     ft_fillstack(&a, argc, argv);
+//     ft_fillstack(&a, argc, data.args);
 //     t_stack *n = a;
 //     while (n)
 //     {

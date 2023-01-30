@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/25 15:52:55 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/30 16:14:42 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,14 @@ typedef struct s_stack
 	int				cost_b;
 	struct s_stack	*next;
 }	t_stack;
+
+typedef struct s_data
+{
+	int		argc;
+	char	**args;
+}	t_data;
 //*************************** FUNCTIONS **************************************
-unsigned int	ft_check_args(int argc, char **argv);
+unsigned int	ft_check_args(int argc, char **argv, t_data *data);
+int				ft_check_str(t_data *data);
 void			ft_error();
 #endif
