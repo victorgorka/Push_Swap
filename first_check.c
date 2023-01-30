@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 17:19:43 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:29:31 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,12 +21,15 @@ unsigned int ft_check_args(int argc, char **argv, t_data *data)
 		data->args = ft_split(argv[1], ' ');
 	else
 		data->args = &argv[1];
-	if (!ft_check_str(data))
-	{
-		puts("hola");
+	if (ft_check_str(data) && ft_check_int(data))
 		ft_error();
-	}	
 	return (1);
+}
+
+int	ft_check_int(data)
+{
+	data->iargs = malloc(data->argc - 1 * sizeof(int));
+
 }
 
 int	ft_check_str(t_data *data)
@@ -51,10 +54,6 @@ int	ft_check_str(t_data *data)
 	return (1);
 }
 
-void check_leaks(void)
-{
-	system("leaks push_swap");
-}
 
 void ft_error()
 {
@@ -62,6 +61,10 @@ void ft_error()
 	exit(-1);
 }
 
+void check_leaks(void)
+{
+	system("leaks push_swap");
+}
 
 int main(int argc, char	**argv)
 {
@@ -71,7 +74,7 @@ int main(int argc, char	**argv)
 	ft_check_args(argc, argv, &data);
 }
 //CASOS DE ERROR
-//-0 +0 1 2 3
-//--3
-//++3
-//
+//-0 +0 1 2 3  DUPLICADO
+//--3 DOS SIGNOS SEGUIDOS
+//++3 DOS SIGNOS SEGUIDOS
+//2147483650 SUPERIOR A INT

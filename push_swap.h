@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 16:14:42 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/30 18:59:51 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ typedef struct s_stack
 
 typedef struct s_data
 {
-	int		argc;
+	t_stack	*a;
+	t_stack	*b;
 	char	**args;
+	int		**iargs;
+	int		argc;
 }	t_data;
 //*************************** FUNCTIONS **************************************
 unsigned int	ft_check_args(int argc, char **argv, t_data *data);
 int				ft_check_str(t_data *data);
+int				ft_check_int(t_data *data);
 void			ft_error();
 #endif

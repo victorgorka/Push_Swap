@@ -6,53 +6,10 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 16:17:31 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/30 19:32:05 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
-
-
-t_stack	*ft_newnode(int value)
-{
-	t_stack	*node;
-
-	node = malloc(sizeof(t_stack));
-	node->value = value;
-	node->index = 0;
-	node->pos = 0;
-	node->target_pos = 0;
-	node->cost_a = 0;
-	node->cost_b = 0;
-	node->next = 0;
-	return (node);
-}
-
-void ft_fillstack(t_stack **a, int argc, char **argv)
-{
-	t_stack	*node;
-	int		i;
-
-	i = 1;
-	*a = ft_newnode(atoi(argv[i++]));
-	node = *a;
-	while (i < argc)
-	{
-		node->next = ft_newnode(atoi(argv[i++]));
-		node = node->next;
-	}
-}
-
-void	ft_cleanstack(t_stack **x)
-{
-	t_stack *node;
-
-	while (*x)
-	{
-		node = *x;
-		*x = (*x)->next;
-		free(node);
-	}
-}
 
 void	ft_push(t_stack **x, t_stack **y)
 {
