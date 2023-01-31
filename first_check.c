@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 19:29:31 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/31 16:15:18 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -26,10 +26,23 @@ unsigned int ft_check_args(int argc, char **argv, t_data *data)
 	return (1);
 }
 
-int	ft_check_int(data)
+int	ft_check_int(t_data *data)
 {
-	data->iargs = malloc(data->argc - 1 * sizeof(int));
+	int	i;
 
+	i = -1;
+	while (data->args[++i])
+	{
+	}
+	data->iargs = malloc(i + 1 * sizeof(int));
+	i = -1;
+	while (data->args[++i])
+	{
+		data->iargs[i] = ft_atoll(data->args[i]);
+		if (data->iargs > INT_MAX || data->iargs < INT_MIN)
+			return (0);
+	}
+	return (1);
 }
 
 int	ft_check_str(t_data *data)
@@ -45,7 +58,7 @@ int	ft_check_str(t_data *data)
 			j++;
 		while (data->args[i][j])
 		{
-			if (data->args[i][j] < '0' || data->args[i][j] > '9') 
+			if (!ft_isdigit(data->args[i][j])) 
 				return (0);
 			j++;
 		}

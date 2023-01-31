@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:42:39 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 19:29:33 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/01/31 15:56:03 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -18,7 +18,7 @@ static int	ft_check_sign(char *str)
 	return (1);
 }
 
-long long	ft_atoi(const char *str)
+long long	ft_atoll(const char *str)
 {
 	long long	res;
 	int		sign;
