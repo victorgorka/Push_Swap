@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/01 14:37:14 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/01 18:57:10 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,6 +21,10 @@ unsigned int ft_check_args(int argc, char **argv, t_data *data)
 		data->args = ft_split(argv[1], ' ');
 	else
 		data->args = &argv[1];
+	// printf("%s\n", data->args[4]);
+	//free(data->args[0]);
+//	if (!data->args)
+//		return (0);
 	if (!ft_check_str(data) || !ft_check_int(data))
 		ft_error();
 	return (1);
@@ -30,20 +34,18 @@ int	ft_check_int(t_data *data)
 {
 	int	i;
 
+	i = 0;
+	while (data->args[i])
+		i++;
+	data->iargs = malloc((i + 1) * sizeof(int));
 	i = -1;
 	while (data->args[++i])
 	{
-	}
-	data->iargs = malloc(i + 1 * sizeof(int));
-	i = -1;
-	while (data->args[++i])
-	{
-		puts(data->args[i]);
 		data->iargs[i] = ft_atoll(data->args[i]);
-		printf("%lld\n", data->iargs[i]);
 		if (data->iargs[i] > INT_MAX || data->iargs[i] < INT_MIN)
 			return (0);
 	}
+	free(data->iargs);
 	// data->iargs[i] = NULL;
 	return (1);
 }
@@ -85,17 +87,26 @@ void check_leaks(void)
 int main(int argc, char	**argv)
 {
 	t_data data;
-	// int i = 0;
+	int i= 0;
+//	(void) argc;
+//	data = (t_data *)malloc(sizeof(t_data));
+//	data->args = ft_split(argv[1], ' ');
 
-	atexit(check_leaks);
 	ft_check_args(argc, argv, &data);
-	// while (data.args[i])
-	//     free(data.args[i++]);
-	// free(data.args[i]);
-	// free(data.args);
-	// i = 0;
-	// while (data.iargs[i])
-	//     free(data.iargs[i++]);
+	// puts(data.args[0]);
+//	printf("%s\n", data->args[0]);
+	if (argc == 2)
+	{
+		 while (data.args[i])
+		 {
+			 if (data.args[i])
+				free(data.args[i++]);
+//			free(data.args[i]);
+		}
+		free(data.args);	
+	}
+//	free(data);
+	atexit(check_leaks);
 }
 //CASOS DE ERROR
 //-0 +0 1 2 3  DUPLICADO

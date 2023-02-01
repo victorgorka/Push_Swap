@@ -6,7 +6,7 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2023/02/01 13:59:33 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/02/01 18:18:21 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 SRCS	= 	push_swap.c \
@@ -16,7 +16,7 @@ SRCS	= 	push_swap.c \
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
 LIBRARY = libft/libft.a
-CC		= gcc
+CC		= gcc -g
 CFLAGS	= -Wall -Wextra -Werror
 RM		= rm -f
 
