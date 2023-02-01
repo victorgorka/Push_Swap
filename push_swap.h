@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/31 15:57:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:25:14 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //*********************** STANDARD LIBRARIES *********************************
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 #include "libft/libft.h"
 //************************** DEFINITIONS *************************************
 typedef struct s_stack
@@ -31,11 +32,11 @@ typedef struct s_stack
 
 typedef struct s_data
 {
-	t_stack	*a;
-	t_stack	*b;
-	char	**args;
-	int		**iargs;
-	int		argc;
+	t_stack		*a;
+	t_stack		*b;
+	char		**args;
+	long long	*iargs;
+	int			argc;
 }	t_data;
 //*************************** FUNCTIONS **************************************
 unsigned int	ft_check_args(int argc, char **argv, t_data *data);

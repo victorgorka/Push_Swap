@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:42:39 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/31 15:56:03 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:40:14 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -21,7 +21,7 @@ static int	ft_check_sign(char *str)
 long long	ft_atoll(const char *str)
 {
 	long long	res;
-	int		sign;
+	int			sign;
 
 	sign = 1;
 	res = 0;
@@ -36,13 +36,7 @@ long long	ft_atoll(const char *str)
 		str++;
 	}
 	res *= sign;
-	if (res != (int) res)
-	{
-		if (sign > 0)
-			return (-1);
-		return (0);
-	}
-	return ((int) res);
+	return (res);
 }
 /*
 #include<stdlib.h>
