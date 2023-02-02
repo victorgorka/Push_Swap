@@ -6,10 +6,10 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 19:04:44 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 21:50:47 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#include "push_swap.h"
 
 t_stack	*ft_newnode(int value)
 {
@@ -22,14 +22,14 @@ t_stack	*ft_newnode(int value)
 	node->target_pos = -1;
 	node->cost_a = -1;
 	node->cost_b = -1;
-	node->next = -1;
+	node->next = NULL;
 	return (node);
 }
 
 void ft_fillstack(t_data *data)
 {
-	t_stack	*node;
-	int		i;
+	t_stack			*node;
+	unsigned int	i;
 
 	i = 0;
 	data->a = ft_newnode(data->iargs[i++]);

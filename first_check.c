@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 19:10:09 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 21:42:03 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -16,7 +16,6 @@ unsigned int ft_check_args(int argc, char **argv, t_data *data)
 	int	i;
 
 	i = -1;
-	data->argc = argc;
 	if (argc == 2)
 		data->args = ft_split(argv[1], ' ');
 	else

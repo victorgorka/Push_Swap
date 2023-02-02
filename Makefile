@@ -6,12 +6,13 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2023/02/01 18:18:21 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/02/02 21:48:30 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 SRCS	= 	push_swap.c \
 			first_check.c \
-			atoll.c
+			atoll.c \
+			init_stack.c
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap

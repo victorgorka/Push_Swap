@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 19:07:09 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 21:38:13 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ int				ft_check_duplicate(t_data *data);
 long long		ft_atoll(const char *str);
 void			ft_error();
 void			ft_fillstack(t_data	*data);
+void			ft_cleanstack(t_stack **x);
 #endif

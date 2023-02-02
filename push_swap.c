@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 19:14:58 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 22:04:50 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -29,12 +29,12 @@ void	ft_printstack(t_data *data)
 	unsigned int	i;
 	t_stack	node;
 
-	node = data->a;
+	node = *data->a;
 	i = 0;
 	while (i <= data->iargs_len)
 	{
-		ft_printf("%d\n", data->a->value);
-
+		ft_printf("%d\n", node.value);
+		node = *node.next;
 	}
 }
 
@@ -48,14 +48,14 @@ int	main(int argc, char	**argv)
 	t_data	data;
 
 	data.b = NULL;
-	if (argc > 1 && !ft_check_args(argc, argv, &data))
-		ft_error();
-	else
+	if (argc == 1)
 		return (0);
+	else if (!ft_check_args(argc, argv, &data))
+		ft_error();
 	ft_fillstack(&data);
 	ft_printstack(&data);
-	ft_cleanstack(&a);
-	ft_cleanstack(&b);
+	ft_cleanstack(&data.a);
+	ft_cleanstack(&data.b);
 	atexit(check);
 }
 //if 1st number is highest -->ra
