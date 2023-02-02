@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/30 18:47:32 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:04:44 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,26 +17,26 @@ t_stack	*ft_newnode(int value)
 
 	node = malloc(sizeof(t_stack));
 	node->value = value;
-	node->index = 0;
-	node->pos = 0;
-	node->target_pos = 0;
-	node->cost_a = 0;
-	node->cost_b = 0;
-	node->next = 0;
+	node->index = -1;
+	node->pos = -1;
+	node->target_pos = -1;
+	node->cost_a = -1;
+	node->cost_b = -1;
+	node->next = -1;
 	return (node);
 }
 
-void ft_fillstack(t_stack **a, int argc, char **argv)
+void ft_fillstack(t_data *data)
 {
 	t_stack	*node;
 	int		i;
 
-	i = 1;
-	*a = ft_newnode(atoi(argv[i++]));
-	node = *a;
-	while (i < argc)
+	i = 0;
+	data->a = ft_newnode(data->iargs[i++]);
+	node = data->a;
+	while (i < data->iargs_len)
 	{
-		node->next = ft_newnode(atoi(argv[i++]));
+		node->next = ft_newnode(data->iargs[i++]);
 		node = node->next;
 	}
 }

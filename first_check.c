@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 13:23:21 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:10:09 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -97,31 +97,31 @@ void ft_error()
 	exit(-1);
 }
 
-void check_leaks(void)
-{
-	system("leaks push_swap");
-}
-
-int main(int argc, char	**argv)
-{
-	t_data data;
-	int i= 0;
-
-	ft_check_args(argc, argv, &data);
-	puts(data.args[0]);
-	// printf("%lld\n", data.iargs[0]);
-	if (argc == 2)
-	{
-		 while (data.args[i])
-		 {
-			 if (data.args[i])
-				free(data.args[i++]);
-		}
-		free(data.args);	
-	}
-	free(data.iargs);
-	atexit(check_leaks);
-}
+// void check_leaks(void)
+// {
+//     system("leaks push_swap");
+// }
+// 
+// int main(int argc, char	**argv)
+// {
+//     t_data data;
+//     int i= 0;
+// 
+//     ft_check_args(argc, argv, &data);
+//     puts(data.args[0]);
+//     // printf("%lld\n", data.iargs[0]);
+//     if (argc == 2)
+//     {
+//          while (data.args[i])
+//          {
+//              if (data.args[i])
+//                 free(data.args[i++]);
+//         }
+//         free(data.args);	
+//     }
+//     free(data.iargs);
+//     atexit(check_leaks);
+// }
 //CASOS DE ERROR
 //-0 +0 1 2 3  DUPLICADO
 //--3 DOS SIGNOS SEGUIDOS

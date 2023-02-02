@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 13:05:40 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/02 19:07:09 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_data
 	t_stack			*b;
 	char			**args;
 	int				*iargs;
-	int				argc;
 	unsigned int	iargs_len;
 }	t_data;
 //*************************** FUNCTIONS **************************************
@@ -46,4 +45,5 @@ int				ft_check_int(t_data *data);
 int				ft_check_duplicate(t_data *data);
 long long		ft_atoll(const char *str);
 void			ft_error();
+void			ft_fillstack(t_data	*data);
 #endif
