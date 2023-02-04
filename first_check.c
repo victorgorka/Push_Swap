@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/04 18:34:03 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/04 19:14:09 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -33,7 +33,7 @@ int	ft_check_int(t_data *data)
 	while (data->args[i])
 		i++;
 	data->iargs_len = i - 1;
-	data->iargs = malloc((i + 1) * sizeof(int));
+	data->iargs = malloc(i * sizeof(int));
 	i = -1;
 	while (data->args[++i])
 	{
