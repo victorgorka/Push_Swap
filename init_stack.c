@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/02 21:50:47 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/04 17:53:14 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -34,7 +34,7 @@ void ft_fillstack(t_data *data)
 	i = 0;
 	data->a = ft_newnode(data->iargs[i++]);
 	node = data->a;
-	while (i < data->iargs_len)
+	while (i <= data->iargs_len)
 	{
 		node->next = ft_newnode(data->iargs[i++]);
 		node = node->next;
