@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/04 19:11:52 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/04 20:19:43 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -22,6 +22,16 @@ void	ft_push(t_stack **x, t_stack **y)
 		(*x)->next = *y;
 	*y = *x;
 	*x = aux;
+}
+
+void	ft_swap(t_stack	**x)
+{
+	t_stack	*aux;
+
+	aux = (*x)->next;
+	(*x)->next = (*x)->next->next;
+	aux->next = *x;
+	(*x) = aux;
 }
 
 void	ft_printstack(t_data *data)
@@ -44,16 +54,19 @@ void	check(void)
 	system("leaks push_swap");
 }
 
-void	ft_clean(t_data *data)
+void	ft_clean(t_data *data, int argc)
 {
 	unsigned int	i;
 
 	i = 0;
 	ft_cleanstack(&data->a);
 	ft_cleanstack(&data->b);
-	while (data->args[i])
-		free(data->args[i++]);
-	free(data->args);
+	if (argc == 2)
+	{
+		while (data->args[i])
+			free(data->args[i++]);
+		free(data->args);
+	}
 	free(data->iargs);
 }
 
@@ -69,8 +82,9 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
+	ft_swap(&data.a);
 	ft_printstack(&data);
-	ft_clean(&data);
+	ft_clean(&data, argc);
 	atexit(check);
 }
 //if 1st number is highest -->ra
