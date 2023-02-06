@@ -6,29 +6,22 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 17:58:28 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/06 20:07:35 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ft_printstack(t_stack **x)
+void	ft_printstack(t_stack *node)
 {
-	t_stack			*node;
 	unsigned int	i;
 
 	i = 0;
-	node = *x;
 	if (!node)
-		ft_printf("null");
-	else
+		ft_printf("null\n");
+	while (node)
 	{
-		while (node->next)
-		{
-			ft_printf("%d\n", node->value);
-			node = node->next;
-			if (!node->next)
-				ft_printf("%d\n", node->value);
-		}
+		ft_printf("%d\n", node->value);
+		node = node->next;
 	}
 }
 
@@ -53,6 +46,35 @@ void	ft_clean(t_data *data, int argc)
 	free(data->iargs);
 }
 
+unsigned int ft_count_stack(t_data data)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (data.a)
+	{
+		data.a = data.a->next;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_issorted(t_data	data)
+{
+	if (ft_count_stack(data) > 1)
+	{
+		while (data.a)
+		{
+			puts("h");
+			if (data.a->next && data.a->value < data.a->next->value)
+				data.a = data.a->next;
+			else
+				return (0);
+		}
+	}
+	return (1);
+}
+
 int	main(int argc, char	**argv)
 {
 	t_data	data;
@@ -65,15 +87,14 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
-	ft_pb(&data);
-	ft_pb(&data);
-	ft_pb(&data);
-	ft_pb(&data);
-	ft_rrr(&data);
 	puts("stack a");
-	ft_printstack(&data.a);
+	ft_printstack(data.a);
 	puts("stack b");
-	ft_printstack(&data.b);
+	ft_printstack(data.b);
+	if (ft_issorted(data))
+		puts("is sorted");
+	else
+		puts("not sorted");
 	ft_clean(&data, argc);
 	atexit(check);
 }
