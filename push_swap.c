@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 17:04:01 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:58:28 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -26,6 +26,8 @@ void	ft_printstack(t_stack **x)
 		{
 			ft_printf("%d\n", node->value);
 			node = node->next;
+			if (!node->next)
+				ft_printf("%d\n", node->value);
 		}
 	}
 }
@@ -63,9 +65,11 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
-	ft_pa(&data);
-	ft_pa(&data);
-	// ft_revrotate(&data.a);
+	ft_pb(&data);
+	ft_pb(&data);
+	ft_pb(&data);
+	ft_pb(&data);
+	ft_rrr(&data);
 	puts("stack a");
 	ft_printstack(&data.a);
 	puts("stack b");
