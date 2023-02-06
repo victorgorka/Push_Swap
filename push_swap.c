@@ -6,76 +6,27 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 15:25:11 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/06 17:04:01 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
 
-void	ft_push(t_stack **x, t_stack **y)
+void	ft_printstack(t_stack **x)
 {
-	t_stack	*aux;
-
-	aux = (*x)->next;
-	if (!*y)
-		(*x)->next = NULL;
-	else
-		(*x)->next = *y;
-	*y = *x;
-	*x = aux;
-}
-
-void	ft_swap(t_stack	**x)
-{
-	t_stack	*aux;
-
-	aux = (*x)->next;
-	(*x)->next = (*x)->next->next;
-	aux->next = *x;
-	(*x) = aux;
-}
-
-void	ft_rotate(t_stack **x)
-{
-	t_stack	*tail;
-	t_stack	*aux;
-
-	aux = *x;
-	tail = *x;
-	while (tail->next)
-		tail = tail->next;
-	tail->next = aux;
-	*x = (*x)->next;
-	aux->next = NULL;
-}
-
-void	ft_revrotate(t_stack **x)
-{
-	t_stack	*tail;
-	t_stack	*aux;
-
-	aux = *x;
-	tail = *x;
-	while (tail->next)
-		tail = tail->next;
-	while (aux->next != tail)
-		aux = aux->next;
-	tail->next = *x;
-	*x = tail;
-	aux->next = NULL;
-}
-
-void	ft_printstack(t_data *data)
-{
-	t_stack			node;
+	t_stack			*node;
 	unsigned int	i;
 
 	i = 0;
-	node = *data->a;
-	while (i <= data->iargs_len)
+	node = *x;
+	if (!node)
+		ft_printf("null");
+	else
 	{
-		ft_printf("%d\n", node.value);
-		if (i++ != data->iargs_len)
-			node = *node.next;
+		while (node->next)
+		{
+			ft_printf("%d\n", node->value);
+			node = node->next;
+		}
 	}
 }
 
@@ -112,8 +63,13 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
-	ft_revrotate(&data.a);
-	ft_printstack(&data);
+	ft_pa(&data);
+	ft_pa(&data);
+	// ft_revrotate(&data.a);
+	puts("stack a");
+	ft_printstack(&data.a);
+	puts("stack b");
+	ft_printstack(&data.b);
 	ft_clean(&data, argc);
 	atexit(check);
 }
