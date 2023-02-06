@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/04 20:36:17 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/06 15:09:59 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -34,15 +34,18 @@ void	ft_swap(t_stack	**x)
 	(*x) = aux;
 }
 
-void	ft_rotate(t_stack **x, t_data *data)
+void	ft_rotate(t_stack **x)
 {
 	t_stack	*tail;
-	t_satck	*aux;
-	t_stack	node;
+	t_stack	*aux;
 
 	aux = *x;
-	node = *x;
-	while ()
+	tail = *x;
+	while (tail->next)
+		tail = tail->next;
+	tail->next = aux;
+	*x = (*x)->next;
+	aux->next = NULL;
 }
 
 void	ft_printstack(t_data *data)
@@ -93,7 +96,7 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
-	ft_swap(&data.a);
+	ft_rotate(&data.a);
 	ft_printstack(&data);
 	ft_clean(&data, argc);
 	atexit(check);
