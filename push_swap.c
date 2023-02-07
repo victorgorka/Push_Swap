@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 20:07:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/07 12:59:11 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -63,16 +63,41 @@ int	ft_issorted(t_data	data)
 {
 	if (ft_count_stack(data) > 1)
 	{
-		while (data.a)
+		while (data.a->next)
 		{
-			puts("h");
-			if (data.a->next && data.a->value < data.a->next->value)
+			if (data.a->value < data.a->next->value)
 				data.a = data.a->next;
 			else
 				return (0);
 		}
 	}
 	return (1);
+}
+
+void	ft_small_sort(t_data *data)
+{
+	if (data->iargs_len + 1 == 2)
+	{
+		ft_sa(data);
+		return ;
+	}
+	while (!ft_issorted(*data))	
+	{
+		if (data->a->value > data->a->next->value 
+			&& data->a->value > data->a->next->next->value)
+			ft_ra(data);
+		else if (data->a->next->value > data->a->value 
+				&& data->a->next->value > data->a->next->next->value)
+			ft_rra(data);
+		else if (data->a->value > data->a->next->value)
+			ft_sa(data);
+	}
+}
+
+void	ft_sortingtype(t_data *data)
+{
+	if (!ft_issorted(*data) && ft_count_stack(*data) <= 3)
+		ft_small_sort(data);
 }
 
 int	main(int argc, char	**argv)
@@ -87,6 +112,8 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
+	// ft_rra(&data);
+	// ft_sa(&data);
 	puts("stack a");
 	ft_printstack(data.a);
 	puts("stack b");
@@ -94,7 +121,8 @@ int	main(int argc, char	**argv)
 	if (ft_issorted(data))
 		puts("is sorted");
 	else
-		puts("not sorted");
+		ft_small_sort(&data);
+	ft_printstack(data.a);
 	ft_clean(&data, argc);
 	atexit(check);
 }
