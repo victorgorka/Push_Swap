@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/07 17:09:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/08 15:57:44 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -98,8 +98,6 @@ void	ft_sorting_type(t_data *data)
 {
 	if (!ft_ifsorted(*data) && ft_count_stack(*data) <= 3)
 		ft_small_sort(data);
-	else
-		ft_sort(data);
 }
 
 void	ft_index_init(t_data *data)
@@ -107,21 +105,26 @@ void	ft_index_init(t_data *data)
 	t_stack	*aux;
 	t_stack	*max;
 
-	while(--(data->iargs_len + 1) > 0)
+	while(data->iargs_len-- + 1  > 0)
 	{
 		aux = data->a;
 		max = NULL;
 		while (aux)
 		{
-			if (aux->value > aux->next->value && aux->next && aux->index == -1)
+			if (aux->index == -1 && max)
 			{
-				max = aux;
+				if (aux->value > max->value)
+					max = aux;
 				aux = aux->next;
 			}
-			else
+			else 
+			{
+				if (!max && aux->index == -1)
+					max = aux;
 				aux = aux->next;
+			}
 		}
-		max->index = data->iargs_len + 1;
+		max->index = data->iargs_len + 2;
 	}
 }
 
