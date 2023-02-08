@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/04 17:53:14 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:03:15 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -50,5 +50,49 @@ void	ft_cleanstack(t_stack **x)
 		node = *x;
 		*x = (*x)->next;
 		free(node);
+	}
+}
+
+void	ft_clean(t_data *data, int argc)
+{
+	unsigned int	i;
+
+	i = 0;
+	ft_cleanstack(&data->a);
+	ft_cleanstack(&data->b);
+	if (argc == 2)
+	{
+		while (data->args[i])
+			free(data->args[i++]);
+		free(data->args);
+	}
+	free(data->iargs);
+}
+
+void	ft_index_init(t_data *data)
+{
+	t_stack	*aux;
+	t_stack	*max;
+
+	while(data->iargs_len-- + 1  > 0)
+	{
+		aux = data->a;
+		max = NULL;
+		while (aux)
+		{
+			if (aux->index == -1 && max)
+			{
+				if (aux->value > max->value)
+					max = aux;
+				aux = aux->next;
+			}
+			else 
+			{
+				if (!max && aux->index == -1)
+					max = aux;
+				aux = aux->next;
+			}
+		}
+		max->index = data->iargs_len + 2;
 	}
 }

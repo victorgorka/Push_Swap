@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 16:45:17 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/08 17:12:06 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ typedef struct s_data
 	unsigned int	iargs_len;
 }	t_data;
 //*************************** FUNCTIONS **************************************
+//push_swap.c
+int				ft_ifsorted(t_data data);
 //first_check.c
 unsigned int	ft_check_args(int argc, char **argv, t_data *data);
 int				ft_check_str(t_data *data);
@@ -50,6 +52,8 @@ long long		ft_atoll(const char *str);
 //init_stack.c
 void			ft_fillstack(t_data	*data);
 void			ft_cleanstack(t_stack **x);
+void			ft_index_init(t_data *data);
+void			ft_clean(t_data *data, int argc);
 //push.c
 void			ft_pa(t_data *data);
 void			ft_pb(t_data *data);
@@ -65,4 +69,6 @@ void			ft_rr(t_data *data);
 void			ft_rra(t_data *data);
 void			ft_rrb(t_data *data);
 void			ft_rrr(t_data *data);
+//small_sort.c
+void			ft_small_sort(t_data *data);
 #endif

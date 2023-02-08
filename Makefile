@@ -6,7 +6,7 @@
 #    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/23 18:51:04 by vde-prad          #+#    #+#              #
-#    Updated: 2023/02/06 15:54:06 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/02/08 17:06:36 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 SRCS	= 	push_swap.c \
@@ -16,7 +16,8 @@ SRCS	= 	push_swap.c \
 			push.c \
 			swap.c \
 			rotate.c \
-			revrotate.c
+			revrotate.c \
+			small_sort.c
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap
