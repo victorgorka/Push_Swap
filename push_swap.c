@@ -17,10 +17,10 @@ void	ft_printstack(t_stack *node)
 
 	i = 0;
 	if (!node)
-		ft_printf("null\n");
+		printf("null\n");
 	while (node)
 	{
-		ft_printf("%d\n", node->value);
+		printf("valor: %d indice :%d\n", node->value, node->index);
 		node = node->next;
 	}
 }
@@ -104,7 +104,25 @@ void	ft_sorting_type(t_data *data)
 
 void	ft_index_init(t_data *data)
 {
-	
+	t_stack	*aux;
+	t_stack	*max;
+
+	while(--(data->iargs_len + 1) > 0)
+	{
+		aux = data->a;
+		max = NULL;
+		while (aux)
+		{
+			if (aux->value > aux->next->value && aux->next && aux->index == -1)
+			{
+				max = aux;
+				aux = aux->next;
+			}
+			else
+				aux = aux->next;
+		}
+		max->index = data->iargs_len + 1;
+	}
 }
 
 int	main(int argc, char	**argv)
@@ -124,7 +142,6 @@ int	main(int argc, char	**argv)
 	puts("stack b");
 	ft_printstack(data.b);
 	ft_index_init(&data);
-	ft_sorting_type(&data);
 	ft_printstack(data.a);
 	ft_clean(&data, argc);
 	atexit(check);
