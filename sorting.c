@@ -5,25 +5,31 @@
  * */
 void	ft_push_to_b(t_data *data)
 {
-	unsigned int	i;
-	unsigned int	num_elemnts;
+	unsigned int	num_elem;
 
-	num_elemnts = data->a_size;
-	i = 0;
-	while (data->a->a_size > 6 && data->a_size < num_elemnts / 2)	
+	num_elem = data->a_size;
+	while (data->a_size > 6 && data->b_size < num_elem / 2)	
 	{
-		if (data->a->index <= data->a_size / 2)
+		if ((unsigned int)data->a->index <= num_elem / 2)
 			ft_pb(data);
 		else
 			ft_ra(data);
-		i++;
 	}
 	while (data->a_size > 3)
 		ft_pb(data);
+}
+
+void	ft_target(t_data *data)
+{
+	
 }
 
 void	ft_main_algo(t_data *data)
 {
 	ft_push_to_b(data);
 	ft_small_sort(data);
+	while (data->b)
+	{
+		ft_target(data);
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/08 18:14:21 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/09 17:12:47 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "push_swap.h"
@@ -57,7 +57,7 @@ int	ft_ifsorted(t_data	data)
 
 void	ft_sorting_type(t_data *data)
 {
-	if (!ft_ifsorted(*data) && ft_count_stack(*data) <= 3)
+	if (!ft_ifsorted(*data) && data->a_size <= 3)
 		ft_small_sort(data);
 	else
 		ft_main_algo(data);
@@ -73,7 +73,7 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
-	data.a_size = (unsigned int)data.iargs_len;
+	data.a_size = (unsigned int)data.iargs_len + 1;
 	data.b_size = 0;
 	puts("stack a");
 	ft_printstack(data.a);
@@ -81,7 +81,10 @@ int	main(int argc, char	**argv)
 	ft_printstack(data.b);
 	ft_index_init(&data);
 	ft_sorting_type(&data);
+	puts("stack a");
 	ft_printstack(data.a);
+	puts("stack b");
+	ft_printstack(data.b);
 	ft_clean(&data, argc);
 	atexit(check);
 }

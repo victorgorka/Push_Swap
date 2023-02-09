@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/08 17:12:06 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/09 16:24:19 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,5 @@ void			ft_rrr(t_data *data);
 //small_sort.c
 void			ft_small_sort(t_data *data);
 //sorting.c
-void			ft_main_alo(t_data *data);
+void			ft_main_algo(t_data *data);
 #endif
