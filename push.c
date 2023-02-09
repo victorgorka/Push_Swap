@@ -27,11 +27,15 @@ void	ft_push(t_stack **x, t_stack **y)
 void	ft_pa(t_data *data)
 {
 	ft_push(&data->b, &data->a);
+	data->a_size++;
+	data->b_size--;
 	ft_printf("pa\n");
 }
 
 void	ft_pb(t_data *data)
 {
 	ft_push(&data->a, &data->b);
+	data->a_size--;
+	data->b_size++;
 	ft_printf("pb\n");
 }

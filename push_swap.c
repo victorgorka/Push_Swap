@@ -13,9 +13,6 @@
 
 void	ft_printstack(t_stack *node)
 {
-	unsigned int	i;
-
-	i = 0;
 	if (!node)
 		printf("null\n");
 	while (node)
@@ -63,21 +60,21 @@ void	ft_sorting_type(t_data *data)
 	if (!ft_ifsorted(*data) && ft_count_stack(*data) <= 3)
 		ft_small_sort(data);
 	else
-		ft_sort(t_data *data);
+		ft_main_algo(data);
 }
 
 int	main(int argc, char	**argv)
 {
 	t_data	data;
-	int		i;
 
-	i = 0;
 	data.b = NULL;
 	if (argc == 1)
 		return (0);
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
+	data.a_size = (unsigned int)data.iargs_len;
+	data.b_size = 0;
 	puts("stack a");
 	ft_printstack(data.a);
 	puts("stack b");

@@ -37,6 +37,8 @@ typedef struct s_data
 	char			**args;
 	int				*iargs;
 	unsigned int	iargs_len;
+	unsigned int	a_size;
+	unsigned int	b_size;
 }	t_data;
 //*************************** FUNCTIONS **************************************
 //push_swap.c
@@ -71,4 +73,6 @@ void			ft_rrb(t_data *data);
 void			ft_rrr(t_data *data);
 //small_sort.c
 void			ft_small_sort(t_data *data);
+//sorting.c
+void			ft_main_alo(t_data *data);
 #endif

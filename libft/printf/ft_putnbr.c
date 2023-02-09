@@ -18,12 +18,6 @@ unsigned int	ft_putnbru(unsigned long n)
 
 	len = 0;
 	numb = n;
-	if (n < 0)
-	{
-		ft_putchar('-');
-		len++;
-		numb *= -1;
-	}
 	if (numb <= 9)
 	{
 		ft_putchar((numb + '0'));
