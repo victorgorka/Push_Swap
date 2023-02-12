@@ -17,7 +17,7 @@ void	ft_printstack(t_stack *node)
 		printf("null\n");
 	while (node)
 	{
-		printf("valor: %d indice :%d\n", node->value, node->index);
+		printf("val: %d ind: %d pos: %d tar_pos: %d\n", node->value, node->index, node->pos, node->target_pos);
 		node = node->next;
 	}
 }
@@ -80,7 +80,11 @@ int	main(int argc, char	**argv)
 	puts("stack b");
 	ft_printstack(data.b);
 	ft_index_init(&data);
-	ft_sorting_type(&data);
+	//ft_sorting_type(&data);
+	ft_pb(&data);
+	ft_pb(&data);
+	ft_pb(&data);
+	ft_target(&data);
 	puts("stack a");
 	ft_printstack(data.a);
 	puts("stack b");

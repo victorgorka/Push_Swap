@@ -25,6 +25,7 @@ void	ft_revrotate(t_stack **x)
 	tail->next = *x;
 	*x = tail;
 	aux->next = NULL;
+	ft_assign_pos(x);
 }
 
 void	ft_rra(t_data *data)

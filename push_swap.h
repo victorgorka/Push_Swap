@@ -75,4 +75,7 @@ void			ft_rrr(t_data *data);
 void			ft_small_sort(t_data *data);
 //sorting.c
 void			ft_main_algo(t_data *data);
+//target_pos.c
+void			ft_target(t_data *data);
+void			ft_assign_pos(t_stack **x);
 #endif

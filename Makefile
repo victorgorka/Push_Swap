@@ -18,7 +18,8 @@ SRCS	= 	push_swap.c \
 			rotate.c \
 			revrotate.c \
 			small_sort.c \
-			sorting.c
+			sorting.c \
+			target_pos.c
 
 OBJS	= ${SRCS:.c=.o}
 NAME	= push_swap

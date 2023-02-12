@@ -32,12 +32,14 @@ void ft_fillstack(t_data *data)
 	unsigned int	i;
 
 	i = 0;
-	data->a = ft_newnode(data->iargs[i++]);
+	data->a = ft_newnode(data->iargs[i]);
 	node = data->a;
+	node->pos = i++;
 	while (i <= data->iargs_len)
 	{
-		node->next = ft_newnode(data->iargs[i++]);
+		node->next = ft_newnode(data->iargs[i]);
 		node = node->next;
+		node->pos = i++;
 	}
 }
 

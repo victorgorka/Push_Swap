@@ -23,6 +23,7 @@ void	ft_rotate(t_stack **x)
 	tail->next = aux;
 	*x = (*x)->next;
 	aux->next = NULL;
+	ft_assign_pos(x);
 }
 
 void	ft_ra(t_data *data)

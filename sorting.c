@@ -19,17 +19,9 @@ void	ft_push_to_b(t_data *data)
 		ft_pb(data);
 }
 
-void	ft_target(t_data *data)
-{
-	
-}
-
 void	ft_main_algo(t_data *data)
 {
 	ft_push_to_b(data);
 	ft_small_sort(data);
-	while (data->b)
-	{
-		ft_target(data);
-	}
+	ft_target(data);
 }

@@ -19,6 +19,7 @@ void	ft_swap(t_stack	**x)
 	(*x)->next = (*x)->next->next;
 	aux->next = *x;
 	(*x) = aux;
+	ft_assign_pos(x);
 }
 
 void	ft_sa(t_data *data)
