@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/09 17:12:47 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/13 18:12:03 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
+
 
 void	ft_printstack(t_stack *node)
 {
@@ -17,7 +17,7 @@ void	ft_printstack(t_stack *node)
 		printf("null\n");
 	while (node)
 	{
-		printf("val: %d ind: %d pos: %d tar_pos: %d\n", node->value, node->index, node->pos, node->target_pos);
+		ft_printf("val: %d ind: %d pos: %d tar_pos: %d\n", node->value, node->index, node->pos, node->target_pos);
 		node = node->next;
 	}
 }
@@ -27,7 +27,7 @@ void	check(void)
 	system("leaks push_swap");
 }
 
-unsigned int ft_count_stack(t_data data)
+unsigned int	ft_count_stack(t_data data)
 {
 	unsigned int	i;
 
@@ -80,10 +80,7 @@ int	main(int argc, char	**argv)
 	puts("stack b");
 	ft_printstack(data.b);
 	ft_index_init(&data);
-	//ft_sorting_type(&data);
-	ft_pb(&data);
-	ft_pb(&data);
-	ft_pb(&data);
+	ft_sorting_type(&data);
 	ft_target(&data);
 	puts("stack a");
 	ft_printstack(data.a);

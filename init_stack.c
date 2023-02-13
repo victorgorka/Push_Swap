@@ -26,7 +26,7 @@ t_stack	*ft_newnode(int value)
 	return (node);
 }
 
-void ft_fillstack(t_data *data)
+void	ft_fillstack(t_data *data)
 {
 	t_stack			*node;
 	unsigned int	i;
@@ -45,7 +45,7 @@ void ft_fillstack(t_data *data)
 
 void	ft_cleanstack(t_stack **x)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	while (*x)
 	{
@@ -76,7 +76,7 @@ void	ft_index_init(t_data *data)
 	t_stack	*aux;
 	t_stack	*max;
 
-	while(data->iargs_len-- + 1  > 0)
+	while (data->iargs_len-- + 1 > 0)
 	{
 		aux = data->a;
 		max = NULL;
@@ -88,7 +88,7 @@ void	ft_index_init(t_data *data)
 					max = aux;
 				aux = aux->next;
 			}
-			else 
+			else
 			{
 				if (!max && aux->index == -1)
 					max = aux;

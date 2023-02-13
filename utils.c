@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoll.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 10:42:39 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/01 14:40:14 by vde-prad         ###   ########.fr       */
+/*   Created: 2023/02/13 17:29:54 by vde-prad          #+#    #+#             */
+/*   Updated: 2023/02/13 18:12:58 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "push_swap.h"
 
 static int	ft_check_sign(char *str)
 {
@@ -38,12 +37,3 @@ long long	ft_atoll(const char *str)
 	res *= sign;
 	return (res);
 }
-/*
-#include<stdlib.h>
-int main()
-{
-	char str[40] = "99999999999999999999999999";
-	printf("%d\n", ft_atoi(str));
-	printf("%d\n", atoi(str));
-}
-*/

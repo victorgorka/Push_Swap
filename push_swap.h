@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/09 16:24:19 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:34:21 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define PUSH_SWAP_H
 
 //*********************** STANDARD LIBRARIES *********************************
-#include <stdlib.h>
-#include <stdio.h>
-#include <limits.h>
-#include "libft/libft.h"
+# include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
+# include "libft/libft.h"
 //************************** DEFINITIONS *************************************
 typedef struct s_stack
 {
@@ -48,9 +48,7 @@ unsigned int	ft_check_args(int argc, char **argv, t_data *data);
 int				ft_check_str(t_data *data);
 int				ft_check_int(t_data *data);
 int				ft_check_duplicate(t_data *data);
-void			ft_error();
-//atoll.c
-long long		ft_atoll(const char *str);
+void			ft_error(void);
 //init_stack.c
 void			ft_fillstack(t_data	*data);
 void			ft_cleanstack(t_stack **x);
