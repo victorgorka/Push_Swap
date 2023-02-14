@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/08 17:03:15 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:12:17 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack	*ft_newnode(int value)

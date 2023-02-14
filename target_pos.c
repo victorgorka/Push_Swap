@@ -6,9 +6,11 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:03:47 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/13 18:13:39 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:20:11 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 void	ft_assign_pos(t_stack **x)
 {

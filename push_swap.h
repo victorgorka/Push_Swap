@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/13 17:34:21 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 14:25:24 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ typedef struct s_data
 {
 	t_stack			*a;
 	t_stack			*b;
+	t_stack			*tmp_a;
+	t_stack			*tmp_b;
 	char			**args;
 	int				*iargs;
 	unsigned int	iargs_len;
-	unsigned int	a_size;
-	unsigned int	b_size;
+	int				a_size;
+	int				b_size;
 }	t_data;
 //*************************** FUNCTIONS **************************************
 //push_swap.c
@@ -76,4 +78,9 @@ void			ft_main_algo(t_data *data);
 //target_pos.c
 void			ft_target(t_data *data);
 void			ft_assign_pos(t_stack **x);
+//cost.c
+void			ft_cost(t_data *data);
+// void			ft_cheapest(t_data *data);
+//utils.c
+int				ft_atoll(const char *str);
 #endif

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   first_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/13 17:24:39 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:19:26 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 unsigned int	ft_check_args(int argc, char **argv, t_data *data)
 {

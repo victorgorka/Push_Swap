@@ -6,10 +6,11 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/13 18:12:03 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:10:46 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
 void	ft_printstack(t_stack *node)
 {
@@ -17,7 +18,7 @@ void	ft_printstack(t_stack *node)
 		printf("null\n");
 	while (node)
 	{
-		ft_printf("val: %d ind: %d pos: %d tar_pos: %d\n", node->value, node->index, node->pos, node->target_pos);
+		ft_printf("val: %d ind: %d pos: %d tar_pos: %d cost_a: %d cost_b: %d\n", node->value, node->index, node->pos, node->target_pos, node->cost_a, node->cost_b);
 		node = node->next;
 	}
 }
