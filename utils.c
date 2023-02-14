@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:29:54 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/13 18:12:58 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:14:59 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,11 @@ long long	ft_atoll(const char *str)
 	}
 	res *= sign;
 	return (res);
+}
+
+unsigned int	ft_absolute_nb(int x)
+{
+	if (x < 0)
+		return (x * -1);
+	return (x);
 }

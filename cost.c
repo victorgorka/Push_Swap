@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:52:59 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 12:31:11 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:20:53 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,22 @@ void	ft_cost(t_data *data)
 	}
 }
 
-/*
-** void	ft_cheapest(t_data *data)
-** {
-** 
-** }
-*/
+void	ft_cheapest(t_data *data)
+{
+	t_stack	*cheap;
+	int		tot_cost;
+
+	tot_cost = INT_MAX;
+	cheap = data->b;
+	data->tmp_b = data->b;
+	while (data->tmp_b)
+	{
+		if (data->tmp_b->cost_a < 0 && data->tmp_b->cost_b < 0)
+		{
+			if (data->tmp_b->cost_a < data->tmp_b->cost_b)
+			{
+				tot_cost = ft_absolute_nb(data->tmp_b->cost_a);
+			}
+		}
+	}
+}

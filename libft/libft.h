@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:28:32 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/01/31 13:22:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/14 19:03:09 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ void	ft_bzero(void *s, size_t n);
 //computes the length of the string s
 size_t	ft_strlen(const char *s);
 
-
 //copy and concatenate strings
 //take the full size of the destination buffer and guarantee NUL-termination
 //copies up to dstsize - 1 characters from the string src to dst, 
@@ -74,14 +73,12 @@ char	*ft_strchr(const char *s, int c);
 //return an integer greater than, equal to, or less than 0
 char	*ft_strrchr(const char *s, int c);
 
-
 //locates the first occurrence of c (converted to an unsigned char) in string s.
 void	*ft_memchr(const void *s, int c, size_t n);
 
 //compares byte string s1 against byte string s2.  
 //Both strings are assumed to be n bytes long.
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-
 
 //locates the first occurrence of the null-terminated string needle
 // in the string haystack
@@ -107,7 +104,6 @@ La substring empieza desde el índice ’start’ y
 tiene una longitud máxima ’len’.
 */
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-
 
 /*
 Reserva (con malloc(3)) y devuelve una nueva
