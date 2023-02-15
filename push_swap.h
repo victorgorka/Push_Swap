@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/15 12:11:26 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:43:23 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,12 @@ void			ft_assign_pos(t_stack **x);
 //cost.c
 void			ft_cost(t_data *data);
 void			ft_cheapest(t_data *data);
+static void		ft_choose_move(t_stack *cheap, t_data *data);
 //utils.c
 int				ft_atoll(const char *str);
 unsigned int	ft_abs(int x);
+//cheap_moves.c
+void	ft_cheap_rrr(t_stack *cheap, t_data *data);
+void	ft_cheap_rr(t_stack *cheap);
+void	ft_cheap_mov(t_stack *cheap);
 #endif
