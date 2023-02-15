@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:52:59 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 19:20:53 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:10:30 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,36 @@ void	ft_cost(t_data *data)
 	}
 }
 
+static int	ft_greater_abs(t_stack *tmp_b)
+{
+	if (ft_abs(tmp_b->cost_a) > ft_abs(tmp_b->cost_b))
+		return (ft_abs(tmp_b->cost_a));
+	else
+		return (ft_abs(tmp_b->cost_b));
+}
+
 void	ft_cheapest(t_data *data)
 {
 	t_stack	*cheap;
-	int		tot_cost;
+	int		total;
+	int		less_cost;
 
-	tot_cost = INT_MAX;
+	less_cost = INT_MAX;
 	cheap = data->b;
 	data->tmp_b = data->b;
 	while (data->tmp_b)
 	{
-		if (data->tmp_b->cost_a < 0 && data->tmp_b->cost_b < 0)
+		if ((data->tmp_b->cost_a < 0 && data->tmp_b->cost_b < 0)
+			|| (data->tmp_b->cost_a >= 0 && data->tmp_b->cost_b >= 0))
+			total = ft_greater_abs(data->tmp_b);
+		else
+			total = ft_abs(data->tmp_b->cost_a) + ft_abs(data->tmp_b->cost_b);
+		if (total < less_cost)
 		{
-			if (data->tmp_b->cost_a < data->tmp_b->cost_b)
-			{
-				tot_cost = ft_absolute_nb(data->tmp_b->cost_a);
-			}
+			less_cost = total;
+			cheap = data->tmp_b;
 		}
+		data->tmp_b = data->tmp_b->next;
 	}
+	ft_printf("index less cost: %d\n", cheap->index);
 }

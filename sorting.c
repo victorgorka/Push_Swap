@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 12:03:57 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 14:26:12 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/15 13:10:05 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,11 @@ void	ft_push_to_b(t_data *data)
 
 void	ft_main_algo(t_data *data)
 {
-	ft_push_to_b(data);
-	ft_small_sort(data);
+	//ft_push_to_b(data);
+	//ft_small_sort(data);
+	while (data->a_size > 7)
+		ft_pb(data);
 	ft_target(data);
 	ft_cost(data);
-	// ft_cheapest(data);
+	ft_cheapest(data);
 }

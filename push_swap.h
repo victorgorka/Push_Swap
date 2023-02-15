@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 19:15:50 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/15 12:11:26 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,5 @@ void			ft_cost(t_data *data);
 void			ft_cheapest(t_data *data);
 //utils.c
 int				ft_atoll(const char *str);
-unsigned int	ft_absolute_nb(int x);
+unsigned int	ft_abs(int x);
 #endif

@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 19:06:31 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/15 12:51:01 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 unsigned int	ft_check_args(int argc, char **argv, t_data *data)
 {
 	if (argc == 2)
-	{
-		data->args = ft_strtrim(argv[1], " ");
-		data->args = ft_split(data->args, ' ');
-	}
+		data->args = ft_split(argv[1], ' ');
 	else
 		data->args = &argv[1];
 	if (!ft_check_str(data) || !ft_check_int(data))
@@ -92,6 +89,7 @@ int	ft_check_str(t_data *data)
 
 void ft_error(void)
 {
+	ft_printf("Error\n");
 	exit(-1);
 }
 
