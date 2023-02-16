@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 15:52:59 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/15 19:20:22 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:11:49 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ static int	ft_greater_abs(t_stack *tmp_b)
 		return (ft_abs(tmp_b->cost_b));
 }
 
+static void	ft_choose_move(t_stack *cheap, t_data *data)
+{
+	if (cheap->cost_a <= 0 && cheap->cost_b <= 0)
+		ft_cheap_rrr(cheap, data);
+	else if (cheap->cost_a >= 0 && cheap->cost_b >= 0)
+		ft_cheap_r(cheap, data);
+	else
+		ft_cheap_mov(cheap, data);
+}
+
 void	ft_cheapest(t_data *data)
 {
 	t_stack	*cheap;
@@ -61,14 +71,4 @@ void	ft_cheapest(t_data *data)
 		data->tmp_b = data->tmp_b->next;
 	}
 	ft_choose_move(cheap, data);
-}
-
-static void	ft_choose_move(t_stack *cheap, t_data *data)
-{
-	if (cheap->cost_a <= 0 && cheap->cost_b <= 0)
-		ft_cheap_rrr(cheap, data);
-	else if (cheap->cost_a >= 0 && cheap->cost_b >= 0)
-		ft_cheap_r(cheap, data);
-	else
-		ft_cheap_mov(cheap, data);
 }

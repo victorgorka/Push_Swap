@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 12:10:46 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/16 17:43:14 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,18 @@ int	main(int argc, char	**argv)
 	ft_fillstack(&data);
 	data.a_size = (unsigned int)data.iargs_len + 1;
 	data.b_size = 0;
-	puts("stack a");
-	ft_printstack(data.a);
-	puts("stack b");
-	ft_printstack(data.b);
+	// puts("stack a");
+	// ft_printstack(data.a);
+	// puts("stack b");
+	// ft_printstack(data.b);
 	ft_index_init(&data);
 	ft_sorting_type(&data);
-	ft_target(&data);
-	puts("stack a");
-	ft_printstack(data.a);
-	puts("stack b");
-	ft_printstack(data.b);
+	// puts("stack a");
+	// ft_printstack(data.a);
+	// puts("stack b");
+	// ft_printstack(data.b);
 	ft_clean(&data, argc);
-	atexit(check);
+	// atexit(check);
 }
 //if 1st number is highest -->ra
 //if 2nd numbeer is highest -->rra

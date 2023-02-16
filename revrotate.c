@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   revrotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:56:59 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/06 17:53:32 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/16 13:09:04 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_revrotate(t_stack **x)
@@ -39,6 +40,7 @@ void	ft_rrb(t_data *data)
 	ft_revrotate(&data->b);
 	ft_printf("rrb\n");
 }
+
 void	ft_rrr(t_data *data)
 {
 	ft_revrotate(&data->a);
