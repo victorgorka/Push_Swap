@@ -6,9 +6,11 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:29:54 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/15 12:11:14 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 12:35:00 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 static int	ft_check_sign(char *str)
 {
@@ -36,6 +38,34 @@ long long	ft_atoll(const char *str)
 	}
 	res *= sign;
 	return (res);
+}
+
+static unsigned int	ft_count_stack(t_data data)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (data.a)
+	{
+		data.a = data.a->next;
+		i++;
+	}
+	return (i);
+}
+
+int	ft_ifsorted(t_data	data)
+{
+	if (ft_count_stack(data) > 1)
+	{
+		while (data.a->next)
+		{
+			if (data.a->value < data.a->next->value)
+				data.a = data.a->next;
+			else
+				return (0);
+		}
+	}
+	return (1);
 }
 
 unsigned int	ft_abs(int x)

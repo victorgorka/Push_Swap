@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/16 13:22:30 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 18:47:14 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 //*********************** STANDARD LIBRARIES *********************************
 # include <stdlib.h>
 # include <stdio.h>
+# include <string.h>
 # include <limits.h>
 # include "libft/libft.h"
 //************************** DEFINITIONS *************************************
@@ -82,10 +83,15 @@ void			ft_assign_pos(t_stack **x);
 void			ft_cost(t_data *data);
 void			ft_cheapest(t_data *data);
 //utils.c
-int				ft_atoll(const char *str);
+long long		ft_atoll(const char *str);
 unsigned int	ft_abs(int x);
+int				ft_ifsorted(t_data	data);
 //cheap_moves.c
 void			ft_cheap_rrr(t_stack *cheap, t_data *data);
 void			ft_cheap_r(t_stack *cheap, t_data *data);
 void			ft_cheap_mov(t_stack *cheap, t_data *data);
+//bonus functions
+void			ft_lstadd_back(t_list **lst, t_list *new);
+t_list			*ft_lstlast(t_list *lst);
+t_list			*ft_lstnew(void *content);
 #endif

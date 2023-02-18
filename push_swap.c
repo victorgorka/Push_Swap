@@ -6,55 +6,18 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/16 17:43:14 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 20:48:59 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_printstack(t_stack *node)
-{
-	if (!node)
-		printf("null\n");
-	while (node)
-	{
-		ft_printf("val: %d ind: %d pos: %d tar_pos: %d cost_a: %d cost_b: %d\n", node->value, node->index, node->pos, node->target_pos, node->cost_a, node->cost_b);
-		node = node->next;
-	}
-}
-
-void	check(void)
-{
-	system("leaks push_swap");
-}
-
-unsigned int	ft_count_stack(t_data data)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (data.a)
-	{
-		data.a = data.a->next;
-		i++;
-	}
-	return (i);
-}
-
-int	ft_ifsorted(t_data	data)
-{
-	if (ft_count_stack(data) > 1)
-	{
-		while (data.a->next)
-		{
-			if (data.a->value < data.a->next->value)
-				data.a = data.a->next;
-			else
-				return (0);
-		}
-	}
-	return (1);
-}
+/*
+** void	check(void)
+** {
+** 	system("leaks push_swap");
+** }
+*/
 
 void	ft_sorting_type(t_data *data)
 {
@@ -76,20 +39,7 @@ int	main(int argc, char	**argv)
 	ft_fillstack(&data);
 	data.a_size = (unsigned int)data.iargs_len + 1;
 	data.b_size = 0;
-	// puts("stack a");
-	// ft_printstack(data.a);
-	// puts("stack b");
-	// ft_printstack(data.b);
 	ft_index_init(&data);
 	ft_sorting_type(&data);
-	// puts("stack a");
-	// ft_printstack(data.a);
-	// puts("stack b");
-	// ft_printstack(data.b);
 	ft_clean(&data, argc);
-	// atexit(check);
 }
-//if 1st number is highest -->ra
-//if 2nd numbeer is highest -->rra
-//if  1st  number > 2nd number --> sa
-// TODO pop y push

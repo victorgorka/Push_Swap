@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:35:11 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:42:10 by vde-prad         ###   ########.fr       */
+/*   Created: 2023/02/06 15:56:37 by vde-prad          #+#    #+#             */
+/*   Updated: 2023/02/18 14:53:59 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_swap(t_stack	**x)
 {
-	t_list	*cpy;
+	t_stack	*aux;
 
-	while (*lst != 0)
-	{
-		cpy = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = cpy;
-	}
+	aux = (*x)->next;
+	(*x)->next = (*x)->next->next;
+	aux->next = *x;
+	(*x) = aux;
+}
+
+void	ft_sa(t_data *data)
+{
+	ft_swap(&data->a);
+}
+
+void	ft_sb(t_data *data)
+{
+	ft_swap(&data->b);
+}
+
+void	ft_ss(t_data *data)
+{
+	ft_swap(&data->a);
+	ft_swap(&data->b);
 }

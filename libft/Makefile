@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: vde-prad <vde-prad@student.42malaga.com>   +#+  +:+       +#+         #
+#    By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/15 17:40:54 by vde-prad          #+#    #+#              #
-#    Updated: 2023/01/25 15:30:02 by vde-prad         ###   ########.fr        #
+#    Updated: 2023/02/18 11:40:50 by vde-prad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,9 @@ SRCS		= ft_putnbr_fd.c \
 			  ft_isprint.c \
 			  ft_memcpy.c \
 			  ft_memset.c \
-			  ft_strlen.c
+			  ft_strlen.c \
+			  get_next_line.c \
+			  get_next_line_utils.c
 
 SRCS_BONUS	= ft_lstmap_bonus.c \
 			  ft_lstiter_bonus.c \

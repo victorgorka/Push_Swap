@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:35:11 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:42:10 by vde-prad         ###   ########.fr       */
+/*   Created: 2022/06/07 16:52:54 by vde-prad          #+#    #+#             */
+/*   Updated: 2023/02/18 20:46:22 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../libft/libft.h"
 
-void	ft_lstclear(t_list **lst)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*cpy;
-
-	while (*lst != 0)
-	{
-		cpy = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = cpy;
-	}
+	del(lst->content);
+	free(lst);
 }

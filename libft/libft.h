@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 13:28:32 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 19:03:09 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 16:38:46 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include "printf/ft_printf.h"
+# define BUFFER_SIZE 1000000
 //************************FUNCTIONS******************************************
 
 //tests for any printing character
@@ -202,4 +203,14 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 //para eliminar el contenido de un nodo, si hace
 //falta.
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//GNL utils
+int		ft_strchr_gnl(const char *s, int c);
+size_t	ft_strlen_gnl(const char *s);
+char	*ft_strjoin_gnl(char const *s1, char const *s2);
+char	*ft_memcpy_gnl(void *dst, const void *src, size_t n);
+char	*ft_strdup_gnl(const char *s1);
+
+//GNL
+char	*get_next_line(int fd);
 #endif

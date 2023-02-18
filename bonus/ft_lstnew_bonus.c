@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear_bonus.c                                :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 17:35:11 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:42:10 by vde-prad         ###   ########.fr       */
+/*   Created: 2022/05/30 13:45:45 by vde-prad          #+#    #+#             */
+/*   Updated: 2023/02/18 18:56:26 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 
-void	ft_lstclear(t_list **lst)
+t_list	*ft_lstnew(void *content)
 {
-	t_list	*cpy;
+	t_list	*node;
 
-	while (*lst != 0)
-	{
-		cpy = (*lst)->next;
-		ft_lstdelone(*lst, del);
-		*lst = cpy;
-	}
+	node = (t_list *)malloc(sizeof(t_list));
+	if (!node)
+		return (0);
+	node->content = content;
+	node->next = 0;
+	return (node);
 }
+/*
+#include<stdio.h>
+int main()
+{
+	t_list *node;
+	node = ft_lstnew("v");
+	puts(node->content);
+	free(node);
+}
+*/

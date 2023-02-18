@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/15 12:51:01 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 17:21:51 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ int	ft_check_int(t_data *data)
 	while (data->args[i])
 		i++;
 	data->iargs_len = i - 1;
-	data->iargs = malloc(i * sizeof(int));
+	data->iargs = malloc((i + 1) * sizeof(int));
 	i = -1;
 	while (data->args[++i])
 	{
-		if (ft_atoll(data->args[i]) > INT_MAX 
+		if (ft_atoll(data->args[i]) > INT_MAX
 			|| ft_atoll(data->args[i]) < INT_MIN)
 			return (0);
 		data->iargs[i] = ft_atoi(data->args[i]);
@@ -87,39 +87,8 @@ int	ft_check_str(t_data *data)
 	return (1);
 }
 
-void ft_error(void)
+void	ft_error(void)
 {
-	ft_printf("Error\n");
+	ft_putstr_fd("Error\n", 2);
 	exit(-1);
 }
-
-// void check_leaks(void)
-// {
-//     system("leaks push_swap");
-// }
-// 
-// int main(int argc, char	**argv)
-// {
-//     t_data data;
-//     int i= 0;
-// 
-//     ft_check_args(argc, argv, &data);
-//     puts(data.args[0]);
-//     // printf("%lld\n", data.iargs[0]);
-//     if (argc == 2)
-//     {
-//          while (data.args[i])
-//          {
-//              if (data.args[i])
-//                 free(data.args[i++]);
-//         }
-//         free(data.args);	
-//     }
-//     free(data.iargs);
-//     atexit(check_leaks);
-// }
-//CASOS DE ERROR
-//-0 +0 1 2 3  DUPLICADO
-//--3 DOS SIGNOS SEGUIDOS
-//++3 DOS SIGNOS SEGUIDOS
-//2147483650 SUPERIOR A INT
