@@ -6,10 +6,11 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 17:35:11 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:42:10 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:24:21 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 void	ft_lstclear(t_list **lst)
 {

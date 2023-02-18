@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 17:21:51 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:55:27 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,11 @@ int	ft_check_str(t_data *data)
 		j = 0;
 		if (data->args[i][j] == '-' || data->args[i][j] == '+')
 			j++;
+		if (!data->args[i][j])
+			return (0);
 		while (data->args[i][j])
 		{
-			if (!ft_isdigit(data->args[i][j])) 
+			if (!ft_isdigit(data->args[i][j]))
 				return (0);
 			j++;
 		}

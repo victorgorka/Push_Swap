@@ -6,18 +6,11 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:48:59 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/18 21:28:35 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-/*
-** void	check(void)
-** {
-** 	system("leaks push_swap");
-** }
-*/
 
 void	ft_sorting_type(t_data *data)
 {
