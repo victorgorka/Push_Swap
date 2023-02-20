@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 18:47:14 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:24:16 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_data
 	char			**args;
 	int				*iargs;
 	unsigned int	iargs_len;
+	unsigned int	iargs_lenaux;
 	int				a_size;
 	int				b_size;
 }	t_data;

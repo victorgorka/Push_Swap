@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 21:55:27 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:25:23 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	ft_check_int(t_data *data)
 	while (data->args[i])
 		i++;
 	data->iargs_len = i - 1;
+	data->iargs_lenaux = data->iargs_len;
 	data->iargs = malloc((i + 1) * sizeof(int));
 	i = -1;
 	while (data->args[++i])

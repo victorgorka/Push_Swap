@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/14 12:12:17 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:30:56 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,8 @@ void	ft_index_init(t_data *data)
 	t_stack	*aux;
 	t_stack	*max;
 
-	while (data->iargs_len-- + 1 > 0)
+	data->iargs_lenaux = data->iargs_len;
+	while (data->iargs_lenaux-- + 1 > 0)
 	{
 		aux = data->a;
 		max = NULL;
@@ -96,6 +97,6 @@ void	ft_index_init(t_data *data)
 				aux = aux->next;
 			}
 		}
-		max->index = data->iargs_len + 2;
+		max->index = data->iargs_lenaux + 2;
 	}
 }

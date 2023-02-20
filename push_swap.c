@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 21:28:35 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:34:34 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	main(int argc, char	**argv)
 	else if (!ft_check_args(argc, argv, &data))
 		ft_error();
 	ft_fillstack(&data);
+	if (ft_ifsorted(data))
+		exit(0);
 	data.a_size = (unsigned int)data.iargs_len + 1;
 	data.b_size = 0;
 	ft_index_init(&data);
