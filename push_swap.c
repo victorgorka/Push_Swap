@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/21 12:09:30 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/22 19:26:06 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ void	ft_sorting_type(t_data *data)
 		ft_small_sort(data);
 	else
 		ft_main_algo(data);
-}
-
-void	leaks(void)
-{
-	system("leaks push_swap");
 }
 
 int	main(int argc, char	**argv)
@@ -45,5 +40,4 @@ int	main(int argc, char	**argv)
 	ft_index_init(&data);
 	ft_sorting_type(&data);
 	ft_clean(&data, argc);
-	// atexit(leaks);
 }
