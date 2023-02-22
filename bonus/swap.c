@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:56:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 14:53:59 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:53:28 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_swap(t_stack	**x)
 {
 	t_stack	*aux;
 
+	if ((*x) == NULL)
+		return ;
 	aux = (*x)->next;
 	(*x)->next = (*x)->next->next;
 	aux->next = *x;

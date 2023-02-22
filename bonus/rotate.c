@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:56:51 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 14:53:33 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:53:04 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	ft_rotate(t_stack **x)
 
 	aux = *x;
 	tail = *x;
+	if ((*x) == NULL)
+		return ;
 	while (tail->next)
 		tail = tail->next;
 	tail->next = aux;

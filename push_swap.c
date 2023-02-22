@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/21 11:45:37 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/21 12:09:30 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,5 @@ int	main(int argc, char	**argv)
 	ft_index_init(&data);
 	ft_sorting_type(&data);
 	ft_clean(&data, argc);
-	atexit(leaks);
+	// atexit(leaks);
 }

@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:57:17 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 20:49:30 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/22 13:01:24 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	ft_choose_mov(t_data *data, char *line)
 		ft_sa(data);
 	else if (!ft_strncmp(line, "sb\n", 4))
 		ft_sb(data);
+	else if (!ft_strncmp(line, "ss\n", 4))
+		ft_ss(data);
 	else
 		ft_error();
 }

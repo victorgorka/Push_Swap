@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:50:38 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/18 14:52:49 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/22 12:52:43 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_push(t_stack **x, t_stack **y)
 {
 	t_stack	*aux;
 
+	if ((*x) == NULL)
+		return ;
 	aux = (*x)->next;
 	if (!*y)
 		(*x)->next = NULL;
