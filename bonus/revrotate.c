@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:56:59 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/22 12:58:32 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:31:20 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,20 @@ void	ft_revrotate(t_stack **x)
 
 void	ft_rra(t_data *data)
 {
-	ft_revrotate(&data->a);
+	if (data->a_size > 1)
+		ft_revrotate(&data->a);
 }
 
 void	ft_rrb(t_data *data)
 {
-	ft_revrotate(&data->b);
+	if (data->b_size > 1)
+		ft_revrotate(&data->b);
 }
 
 void	ft_rrr(t_data *data)
 {
-	ft_revrotate(&data->a);
-	ft_revrotate(&data->b);
+	if (data->a_size > 1)
+		ft_revrotate(&data->a);
+	if (data->b_size > 1)
+		ft_revrotate(&data->b);
 }

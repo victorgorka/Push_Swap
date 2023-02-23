@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 15:56:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/22 12:53:28 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/23 13:31:54 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,20 @@ void	ft_swap(t_stack	**x)
 
 void	ft_sa(t_data *data)
 {
-	ft_swap(&data->a);
+	if (data->a_size > 1)
+		ft_swap(&data->a);
 }
 
 void	ft_sb(t_data *data)
 {
-	ft_swap(&data->b);
+	if (data->b_size > 1)
+		ft_swap(&data->b);
 }
 
 void	ft_ss(t_data *data)
 {
-	ft_swap(&data->a);
-	ft_swap(&data->b);
+	if (data->a_size > 1)
+		ft_swap(&data->a);
+	if (data->b_size > 1)
+		ft_swap(&data->b);
 }
