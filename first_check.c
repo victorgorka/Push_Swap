@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 16:20:14 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/22 19:41:41 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:16:25 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,8 +90,9 @@ int	ft_check_str(t_data *data)
 	return (1);
 }
 
-void	ft_error(void)
+void	ft_error(t_data *data, int argc)
 {
 	ft_putstr_fd("Error\n", 2);
+	ft_clean(data, argc);
 	exit(-1);
 }

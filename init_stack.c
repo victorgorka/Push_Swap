@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 18:46:37 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/20 19:30:56 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:40:20 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,14 @@ void	ft_clean(t_data *data, int argc)
 	i = 0;
 	ft_cleanstack(&data->a);
 	ft_cleanstack(&data->b);
-	if (argc == 2)
+	if (argc == 2 && data->args != NULL)
 	{
 		while (data->args[i])
 			free(data->args[i++]);
 		free(data->args);
 	}
-	free(data->iargs);
+	if (data->iargs != NULL)
+		free(data->iargs);
 }
 
 void	ft_index_init(t_data *data)

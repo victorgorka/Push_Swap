@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 12:25:36 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/20 19:24:16 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:14:16 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ unsigned int	ft_check_args(int argc, char **argv, t_data *data);
 int				ft_check_str(t_data *data);
 int				ft_check_int(t_data *data);
 int				ft_check_duplicate(t_data *data);
-void			ft_error(void);
+void			ft_error(t_data *data, int argc);
 //init_stack.c
 void			ft_fillstack(t_data	*data);
 void			ft_cleanstack(t_stack **x);

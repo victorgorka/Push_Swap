@@ -6,7 +6,7 @@
 /*   By: vde-prad <vde-prad@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:54:20 by vde-prad          #+#    #+#             */
-/*   Updated: 2023/02/22 19:26:06 by vde-prad         ###   ########.fr       */
+/*   Updated: 2023/02/24 19:40:35 by vde-prad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ int	main(int argc, char	**argv)
 	t_data	data;
 
 	data.b = NULL;
+	data.a = NULL;
+	data.iargs = NULL;
+	data.args = NULL;
 	if (argc == 1)
 		return (0);
 	else if (!ft_check_args(argc, argv, &data))
-		ft_error();
+		ft_error(&data, argc);
 	ft_fillstack(&data);
 	if (ft_ifsorted(data))
 	{
